@@ -7,6 +7,9 @@ public func routes(_ router: Router) throws {
         return try req.view().render("welcome")
     }
     
+    let cardController = BingoCardController()
+    router.get("cards", use: cardController.generateCard)
+    
     // Says hello
     router.get("hello", String.parameter) { req -> Future<View> in
         return try req.view().render("hello", [
