@@ -1,0 +1,12 @@
+
+#set("title") { True Crime Bingo }
+
+#set("body") {
+<div class="card">
+#for(tile in tiles) {
+<div class="tile">#(tile.title)</div>
+}
+</div>
+}
+
+#embed("base")
