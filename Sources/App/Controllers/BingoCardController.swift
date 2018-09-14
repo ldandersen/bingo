@@ -7,7 +7,7 @@
 
 import Vapor
 
-struct Tile: Encodable {
+struct Tile: Encodable, Content {
     let title: String
     
     init(title: String) {
