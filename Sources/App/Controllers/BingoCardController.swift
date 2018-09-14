@@ -17,11 +17,6 @@ struct Tile: Encodable {
 
 class BingoCardController {
     func generateCard(_ req: Request) throws -> Future<View> {
-        /*let jsonFileURL = Bundle.main.url(forResource: "tiles", withExtension: "json", subdirectory: "Data")
-        let jsonData = try Data(contentsOf: jsonFileURL!)
-        
-        let tilesJSON = try JSONSerialization.jsonObject(with: jsonData, options: [])*/
-        
         let tiles = [Tile(title: "Tile 1"),
                      Tile(title: "Tile 2"),
                      Tile(title: "Tile 3"),
