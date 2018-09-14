@@ -7,7 +7,8 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     /// Register providers first
     try services.register(LeafProvider())
     
-    let sqlite = try SQLiteDatabase(storage: .file(path: "Tiles.sqlite"))
+    let sqlitePath = DirectoryConfig.detect().workDir.appending("Resources/Tiles.sqlite")
+    let sqlite = try SQLiteDatabase(storage: .file(path: sqlitePath))
     
     /// Register the configured SQLite database to the database config.
     var databases = DatabasesConfig()
